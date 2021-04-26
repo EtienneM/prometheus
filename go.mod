@@ -1,5 +1,6 @@
 module github.com/prometheus/prometheus
 
+// +scalingo goVersion go1.14
 go 1.14
 
 require (
