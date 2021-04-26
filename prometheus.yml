@@ -2,9 +2,9 @@ global:
   scrape_interval:     15s
   evaluation_interval: 30s
 
-# remote_write:
-#   - url: http://remote1/push
-#     name: drop_expensive
+remote_write:
+  - url: https://test-promscale.osc-fr1.scalingo.io/write
+    # name: drop_expensive
 #     write_relabel_configs:
 #     - source_labels: [__name__]
 #       regex:         expensive.*
@@ -17,8 +17,9 @@ global:
 #     headers:
 #       name: value
 #
-# remote_read:
-#   - url: http://remote1/read
+remote_read:
+  - url: https://test-promscale.osc-fr1.scalingo.io/read
+  # - url: http://remote1/read
 #     read_recent: true
 #     name: default
 #   - url: http://remote3/read
