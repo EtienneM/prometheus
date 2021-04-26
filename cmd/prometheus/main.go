@@ -326,6 +326,10 @@ func main() {
 		os.Exit(1)
 	}
 
+	if os.Getenv("PORT") != "" {
+		cfg.web.ListenAddress = ":" + os.Getenv("PORT")
+	}
+
 	cfg.web.ExternalURL, err = computeExternalURL(cfg.prometheusURL, cfg.web.ListenAddress)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, errors.Wrapf(err, "parse external URL %q", cfg.prometheusURL))
