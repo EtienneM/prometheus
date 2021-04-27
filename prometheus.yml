@@ -32,8 +32,8 @@ remote_read:
 #       key_file: valid_key_file
 
 scrape_configs:
-- job_name: 0123service-xxx
-  metrics_path: /metrics
+- job_name: 'prometheus'
+  # Override the global default and scrape targets from this job every 5 seconds.
+  scrape_interval: 5s
   static_configs:
-    - targets:
-      - localhost:9090
+    - targets: ['localhost:9090']
